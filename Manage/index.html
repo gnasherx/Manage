@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Manage</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Google font-->
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="main_whole_page container"><!--p-->
+
+      <nav class="top" data-no-scroll="1">
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="signup_container">
+        <div class="signup_layout"><!--j-->
+
+            <div class="main_app_inputs"><!--v-->
+              <div class="app_logo_div">
+                <img class="logo_img" src="" alt="" width="120" height="120">
+              </div>
+              <h1 class="app_name">Manage</h1>
+              <div class="sigup_with_manage">Sign up with Manage to get started.</div>
+              <div class="signup_container"><!--w-->
+                <div class="signup_email_pass"><!--u-->
+                  <form id="signup_form"action="#">
+                    <div id="signup_form">
+                      <input type="text" class="inputtext add_email_pass" id="email" name="email" placeholder="Email address" value="" tabindex="1">
+                      <input type="password" class="inputtext add_email_pass" name="pass" id="pass"  placeholder="Password">
+                      <button value="1" class="signup_button" id="loginbutton" name="login" tabindex="1" type="submit">Sign up</button>
+                      <div class="keep_me_signin_div">
+                        <div class="keep_me_signin_text clearfix">
+                          <label class="keep_me_sign_text_input"><input type="checkbox" value="1" name="persistent" tabindex="1" id="u_0_0"></label>
+                          <label for="u_0_0" class="uiInputLabelLabel">Keep me signed in</label>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="main_app_image">
+              <div class="app_releted_img">
+                <img class="img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yc/r/xFmW1tcxsyL.png" alt="App info image" width="944" height="570">
+              </div>
+            </div>
+        </div>
+      </div>
+
+    <div class="ui_section  ui_introduction">
+      <div class="intro_container"><!--container-->
+        <div class="intro_div"><!--dblcol-->
+          <div class="intro_image" style="position: relative; height: 550px; width: 350px;">
+            <img class="img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057106_628362803932627_1441447897_n.png?oh=718d86dda85c2362bdd2a08c63e8306c&amp;oe=5A299957" alt="" style="position: absolute; bottom: 0; right: 0; max-width: 662px !important; width: 662px !important; height: 615px !important;">
+          </div>
+          <div class="intro_text">
+            <h1 class="white intro_manage_white_text">Introducing Manage to you.</h1>
+            <div class="intro_manage_white_subtext">
+              A new way to manage your workspace and collaborate with others.
+            </div>
+            <a class="button featureslink" href="#" style="background-color: #6d999b; margin-top: 8px;">Watch the tour</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="feature_section_container sayanything">
+    <div class="section_container" style="display:block">
+
+      <div class="heroText2 text_center">
+        <h1 class="feature_center_text">Check out all you can do in Manage.</h1>
+      </div>
+
+      <div class="feature_div_shadow">
+        <div class="feature_section" id="texts">
+          <div class="feature_container">
+            <div class="textLeft">
+              <h1>Chat with collaborators.</h1>
+              <div class="feature_info sub_text_left">Reach people instantly. You’ll see when your message is delivered to your friend’s phone, plus when they’ve seen it. This way, you can be sure your messages are going through like they’re supposed to.
+              </div>
+            </div>
+            <div class="imgContainer">
+              <div>
+                <img class="img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057186_808627832564368_562834945_n.png?oh=64d0de4c35b267d7fd00481698f10af9&amp;oe=5A346742" alt="" style="max-width: 354px !important;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature_section" id="texts">
+          <div class="feature_container">
+            <div class="textLeft">
+              <h1>Real time dashbord for accurate details.</h1>
+              <div class="feature_info sub_text_left">Real-time dashboards instantly show the status of all your current projects. Track costs and team progress across all your projects. Create one-click reports to track data on your projects, tasks and teams to print or share online in your next meeting. Say goodbye to time consuming reporting. Get real-time business intelligence anywhere, anytime.
+              </div>
+            </div>
+            <div class="imgContainer">
+              <div>
+                <img class="img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057186_808627832564368_562834945_n.png?oh=64d0de4c35b267d7fd00481698f10af9&amp;oe=5A346742" alt="" style="max-width: 354px !important;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Firebase connection-->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAmKtlVr0v38VXyzO3YU-Fjo7A4zxJQL1k",
+        authDomain: "manage-1d80d.firebaseapp.com",
+        databaseURL: "https://manage-1d80d.firebaseio.com",
+        projectId: "manage-1d80d",
+        storageBucket: "",
+        messagingSenderId: "768654120261"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
