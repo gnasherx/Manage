@@ -45,7 +45,7 @@ nav.top ul a{
   padding: 8px 7px 9px;
 }
 nav.top ul a:hover{
-  color:  #698587;
+  color: #6d8f91;
   cursor: pointer;
 }
 
@@ -65,28 +65,30 @@ nav.top ul a:hover{
   line-height: normal;
   margin: 0 auto;
 }
-.main_whole_page .main_app_inputs{
+/*css for signup and signup*/
+.main_whole_page .main_app_inputs, .main_whole_page .main_app_inputs_signin{
   display: table-cell;
   padding-right: 80px;
   vertical-align: middle;
   width: 320px;
 }
+
 .app_logo_div{
-  height: 120px;
+  height: 90px;
   min-width: 100%;
-  width: 120px;
+  width: 90px;
 }
 .app_logo_div .logo_img{
   margin-left: auto;
   margin-right: auto;
-  width: 120px;
+  width: 90px;
   line-height: 0;
-  padding-left: 100px;
+  padding-left: 115px;
   padding-right: 100px;
   pointer-events: none;
 }
 .main_app_inputs .app_logo_div .logo_img{
-  height: 120px !important;
+  height: 90px !important;
 }
 .main_whole_page .app_name{
   color: rgba(0, 0, 0, .88);
@@ -103,13 +105,18 @@ nav.top ul a:hover{
   text-align: center;
   width: 320px;
 }
+/*sign up username email password top margin*/
 .main_whole_page .signup_email_pass{
   margin-top: 24px;
 }
-.main_whole_page .signup_layout .add_email_pass{
+/*signin email pass top margin*/
+.main_whole_page .signin_email_pass{
+  margin-top: 0px;
+}
+.main_whole_page .signup_layout .add_email_pass_username{
   margin-bottom: 10px;
 }
-.main_whole_page .add_email_pass{
+.main_whole_page .add_email_pass_username{
   border: 1px solid rgba(0, 0, 0, .20);
   border-radius: 4px;
   color: rgba(0, 0, 0, 1);
@@ -121,7 +128,7 @@ nav.top ul a:hover{
   padding: 0 16px;
   width: 286px;
 }
-.main_whole_page  .add_email_pass:focus{
+.main_whole_page  .add_email_pass_username:focus{
   outline: none;
   border: 1px solid rgb(109,153,155);
 }
@@ -158,7 +165,7 @@ button{
   color: #fff;
 }
 .main_whole_page .signup_layout .keep_me_signin_div{
-  margin-bottom: 48px;
+  margin-bottom: 12px;
   margin-top: 0;
 }
 
@@ -193,6 +200,57 @@ label{
   color: #666;
   font-weight: bold;
   vertical-align: middle;
+}
+
+.main_whole_page .signup_layout .alredy_signin_div{
+  margin-bottom: 48px;
+  margin-top: 0;
+}
+
+.main_whole_page .alredy_signin_div{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+}
+.main_whole_page .already_signin_div .already_sign_text{
+  text-align: center;
+  vertical-align: baseline;
+}
+.already_signin_label{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+.main_whole_page .already_signin_div .already_sign_text a{
+  color: #6d999b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.main_whole_page .already_signin_div .already_sign_text a:hover{
+  color: #6d8f91;
+}
+
+/*place holder text color*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cacaca;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #cacaca;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #cacaca;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #cacaca;
 }
 
 .main_whole_page .main_app_image{
@@ -296,7 +354,7 @@ img{
   line-height: 24px;
   margin: 0 0 10px;
   padding: 0;
-  color: #d4e4ff;
+  color: #ebf8f9;
 }
 .featureslink{
   display: inline-block;
@@ -356,22 +414,24 @@ img{
 }
 .feature_section{
   overflow: hidden;
-  padding:80px 30px 0;
+  padding:80px 30px 80px 30px;
   position: relative;
 }
+
 .feature_container{
   display: table;
   margin:0 auto;
   position: relative;
 }
-.textLeft{
+.first_feature_text{
   display: table-cell;
   vertical-align: middle;
-  width: 320px;
-  min-width: 320px;
-  max-width: 302px;
+  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
   padding-right: 100px;
 }
+/*h1 from signup page manage bottom margin*/
 h1{
   color: rgba(0,0,0,0.75);
   font-size: 38px;
@@ -379,27 +439,73 @@ h1{
   line-height: 44px;
   font-weight: 100;
   margin: 0 0 10px;
+  text-align: center;
 }
-.sub_text_left{
+/*manage name in signin bottom margin*/
+.app_name_signin{
+  margin:0px;
+}
+.sub_text{
   font-weight: 400;
 }
-.feature_info .sub_text_left{
+.feature_info .sub_text{
   color: rgba(0,0,0,,0.55);
   font-size: 17px;
   line-height: 24px;
   margin:0 0 10px;
 }
-.textLeft + .imgContainer{
+.first_feature_text + .first_feature_img{
   display: table-cell;
   text-align: right;
   padding-left: 100px;
 }
-.textLeft + .imgContainer .img{
+.first_feature_text + .first_feature_img .img{
   float: right;
   width: 100% !important;
   height: auto !important;
   pointer-events: none;
 }
-img{
+first_img{
   border: 0;
+}
+/*second feature*/
+.feature_container .second_feature_img{
+  height: 488px;
+  min-width: 320px;
+  padding-right:140px;
+}
+.second_feature_img .second_img{
+  float: left;
+  width: 100% !important;
+  height: auto !important;
+  pointer-events: none;
+  border: 0;
+}
+.second_feature_img + .second_feature_text{
+  display: table-cell;
+  width: 400px;
+  vertical-align: middle;
+  padding-left: 50px;
+}
+
+/*footer*/
+.footer{
+  background-color: #323940;
+  overflow: hidden;
+  padding: 20px 30px;
+}
+.footer .footer_container{
+  display: block;
+  text-align: center;
+}
+.footer_container{
+  margin-left: 0 auto;
+  position: relative;
+}
+.footer_text{
+  color: rgba(255, 255, 255, .6);
+  font-size: 16px;
+  letter-spacing: .2px;
+  line-height: 22px;
+  margin: 0;
 }
