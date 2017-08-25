@@ -8,7 +8,8 @@
   };
   firebase.initializeApp(config);
 
-  $('#signout').click(
+/*
+  $('#global-new-go-to-project-button').click(
     function(){
       firebase.auth().signOut().then(function() {
          window.location.href="../index.html";
@@ -16,4 +17,11 @@
         alert('error occured while signing you out!');
       });
     }
-  );
+  );  *?/
+
+ /*user isoc dropdown*/
+ $("#userinfo-Dropdown").hide();
+ document.getElementById('user-dropdown-toggle').addEventListener('click' ,openDropdown);
+ function openDropdown(){
+    $("#userinfo-Dropdown").toggle('fast')
+ }
