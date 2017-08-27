@@ -47,7 +47,7 @@
                         <a href="#" class="js-nav"><span class="DashUserDropdown-linkIcon">Profile</span></a>
                       </li>
                       <li class="js-signout-button" id="signout-button">
-                        <button type="button" class="dropdown-link" name="button">Log out</button>
+                        <button id="log_out" type="button" class="dropdown-link" name="button">Log out</button>
                       </li>
                     </ul>
                   </div>
@@ -55,7 +55,8 @@
                 <li class="topbar-go-to-project-btn">
                   <button type="button" id="global-new-go-to-project-button"
                   class="edgeButton-primary edgebutton" name="button">
-                  <span class="text-go-to-project">Sign out</span>
+                  <span id="recent_project_name" class="text-go-to-project"></span>
+                  <i class="go_to_project align_middle material-icons">arrow_forward</i>
                   </button>
                 </li>
               </ul>
@@ -74,7 +75,6 @@
     					<p class="p_input enter_project_name_text">Enter your project name.</p>
             		<p class=" no_bottom_margin domain_input">
           			<input type="text" name="domain" id="project_name"  class="input_inline align_right small_right_margin" placeholder="your-project-name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                <img class="description_img small_bottom_margin"src="../images/description.jpg" alt="description">
                 </p>
             		<p class="p_button large_bottom_margin">
                 <button type="submit" id="submit_project_name" class="btn btn_large small_top_margin full_width ladda-button" data-style="expand-right">
@@ -83,6 +83,7 @@
               </p>
       			</div>
         </form>
+
         <!--show databsae-->
        <div class="align_center">
          <p class="p_already_have_project small_bottom_margin">You’ve this beautiful projects too:</p>

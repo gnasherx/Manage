@@ -24,7 +24,7 @@
   });
 
 
-  $('#global-new-go-to-project-button').click(
+  $('#log_out').click(
     function(){
       firebase.auth().signOut().then(function() {
          window.location.href="../index.html";
@@ -63,7 +63,7 @@
     //retriveing database values
    projectref.on('child_added', function(snapshot){
     var project = snapshot.val().name;
-    console.log(project);
+    document.getElementById('recent_project_name').innerText=project;
     renderui(project);
     return true;
    });

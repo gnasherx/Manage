@@ -84,7 +84,6 @@
 	}
 	.nav .right-actions>li>a{
 		height: 100%;
-		transition: all 0.15s ease-in-out;
 	}
 	.nav>li>a{
 		color: inherit;
@@ -104,6 +103,12 @@
 	}
 	img{
 		border: 0;
+	}
+	.go_to_project{
+		font-weight: 200;
+		margin-left: 4px;
+		font-size: 16px;
+
 	}
 	/*dropdown*/
 
@@ -316,7 +321,7 @@
 		border-color: transparent;
 	}
 	.edgeButton-primary{
-		border: 1px solod #fe4365;
+		border: 1px solid #fe4365;
 		color: #fff;
 	}
 	.edgebutton{
@@ -421,14 +426,8 @@
 		flex-grow: 10;
 		min-width: 150px;
 	}
-	.description_img{
-		width: 40px;
-		height:40px;
-		vertical-align: middle;
-		cursor: pointer;
-	}
-	input.input_inline{
-		width:288px;
+		input.input_inline{
+		width:auto;
 	}
 	input[type=text]{
 		font-size: 1.25rem;
