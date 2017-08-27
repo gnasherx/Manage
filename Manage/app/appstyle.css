@@ -343,7 +343,7 @@
 	#page-content{
 		width: 960px;
 		margin: 0 auto;
-		padding: 8rem 2rem;
+		padding: 8rem 2rem 2rem 2rem;
 	}
 
 	.span_4_of_6{
@@ -521,4 +521,16 @@
   }
 	.align_middle{
 		vertical-align: middle!important;
+	}
+
+	/*dynamic*/
+	.span_3_of_6{
+		width: 49.2%;
+	}
+	.col{
+		display: block;
+		margin:0 0 2%;
+	}
+	.p_dyn_project{
+		margin:0 0 1rem;
 	}

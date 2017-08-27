@@ -73,15 +73,25 @@
           	<div class="col_input span_4_of_6 float_none margin_auto">
     					<p class="p_input enter_project_name_text">Enter your project name.</p>
             		<p class=" no_bottom_margin domain_input">
-          			<input type="text" name="domain" id="domain" value="" class="input_inline align_right small_right_margin team_name_input" placeholder="your-project-name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          			<input type="text" name="domain" id="project_name" value="" class="input_inline align_right small_right_margin team_name_input" placeholder="your-project-name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 </p>
             		<p class="p_button large_bottom_margin">
-                <button type="submit" id="submit_team_domain" class="btn btn_large small_top_margin full_width ladda-button" data-style="expand-right">
+                <button type="submit" id="submit_project_name" class="btn btn_large small_top_margin full_width ladda-button" data-style="expand-right">
                   <span class="ladda-label">Continue <i class="ts_icon ts_icon_arrow_large_right small_left_margin align_middle material-icons">arrow_forward</i></span>
                 </button>
               </p>
       			</div>
         </form>
+      </div>
+    </div>
+
+    <div id="page-content">
+      <div class="col span_3_of_6 margin_auto float_none project_flow_wrapper">
+        <div class="project_list_wrapper">
+          <p class="clear_both medium_bottom_margin p_dyn_project">Your all projects are here:</p>
+          <ul id='project-list-name'>
+          </ul>
+        </div>
       </div>
     </div>
 
