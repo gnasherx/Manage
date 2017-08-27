@@ -17,8 +17,7 @@
     if (user) {
     currentuser=user.uid;
     projectref=database.ref('projects').child(currentuser);
-    show();
-
+     show();
     } else {
       alert('no user!');
     }
@@ -61,41 +60,38 @@
 
 
  function show(){
-   //retriveing database values
-  projectref.on('child_added', function(snapshot){
-   var project = snapshot.val().name;
-   console.log(project);
-   renderui(project);
-   return true;
-  });
-   return true;
- }
-
- function renderui(project){
-   var div=document.createElement('div');
-
-    div.style.borderBottom="1px solid #E8E8E8";
-    div.style.borderTop="1px solid #E8E8E8";
-    div.style.display="flex";
-    div.style.justifyContent="center";
-    div.style.alignItems="center";
-    div.style.cursor="pointer";
-    div.style.clear="both";
-    div.style.color="#2C2D30";
-    div.style.fontWeight="600";
-    div.style.textAlign="center";
-    div.style.padding="10px 0px";
-    div.style.fontSize="20px";  
-
-
-
-
-
-
-
-
-    div.innerText=project;
-    var projectlist=document.getElementById('project-list-name');
-    projectlist.appendChild(div);
+    //retriveing database values
+   projectref.on('child_added', function(snapshot){
+    var project = snapshot.val().name;
+    console.log(project);
+    renderui(project);
     return true;
- }
+   });
+    return true;
+  }
+
+  function renderui(project){
+    var a=document.createElement('a');
+
+    a.style.padding="8px 14px 9px";
+    a.style.fontSize="15px";
+    a.style.backgounrd="#FBFBFA";
+    a.style.color="#555459";
+    a.style.fontWeight="500";
+    a.style.lineHeight="1.2rem";
+    a.style.border="1px solid #A0A0A2"
+    a.style.borderRadius=".25rem";
+    a.style.boxShadow="none";
+    a.style.position="relative";
+    a.style.display="flex";
+    a.style.textAlign="center";
+    a.style.justifyContent="center";
+    a.style.cursor="pointer";
+    a.style.marginRight="4px";
+    a.style.flexWrap="wrap";
+
+     a.innerText=project;
+     var projectlist=document.getElementById('project-list-name');
+     projectlist.appendChild(a);
+     return true;
+  }
