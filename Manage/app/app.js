@@ -34,6 +34,10 @@
     }
   );
 
+document.getElementById('recent_project_name').addEventListener('click',function(){
+  console.log('recent project');
+  window.location.href="../mainui/mainuiindex.html";
+});
  /*user isoc dropdown*/
  $("#userinfo-Dropdown").hide();
  document.getElementById('user-dropdown-toggle').addEventListener('click' ,openDropdown);
@@ -45,12 +49,14 @@
  document.getElementById('submit_project_name').addEventListener('click', function(e){
    e.preventDefault();
    projectname=document.getElementById('project_name').value;
+   var newProjectKey = projectref.push().key;
 
    if(projectname !== ""){
-     projectref.push().set({
+     projectref.child(newProjectKey).set({
        name:projectname,
-       startdate:new Date().getTime()
-     });
+       startdate:new Date().getTime(),
+       projectkey:newProjectKey
+      });
      document.getElementById('project_name').value='';
    }else{
      alert("You must enter a new project name!");
@@ -61,8 +67,9 @@
 
  function show(){
     //retriveing database values
-   projectref.on('child_added', function(snapshot){
+   projectref.orderByChild('startdate').on('child_added', function(snapshot){
     var project = snapshot.val().name;
+    console.log(project);
     document.getElementById('recent_project_name').innerText=project;
     renderui(project);
     return true;
