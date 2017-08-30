@@ -11,17 +11,27 @@
   const database=firebase.database();
   var currentuser;
   var projectname;
-  var projectref;
+  var projectref,userRef;
+  var newProjectKey;
+
+$(document).ready(function(){
+
+
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     currentuser=user.uid;
     projectref=database.ref('projects').child(currentuser);
+    userRef=database.ref('users').child(currentuser);
      show();
+
     } else {
-      alert('no user!');
+    window.location.href="../index.html";
     }
   });
+
+});
+
 
 
   $('#log_out').click(
@@ -49,14 +59,20 @@ document.getElementById('recent_project_name').addEventListener('click',function
  document.getElementById('submit_project_name').addEventListener('click', function(e){
    e.preventDefault();
    projectname=document.getElementById('project_name').value;
-   var newProjectKey = projectref.push().key;
+   newProjectKey = projectref.push().key;
 
    if(projectname !== ""){
-     projectref.child(newProjectKey).set({
+     projectref.child(projectname).set({
        name:projectname,
        startdate:new Date().getTime(),
        projectkey:newProjectKey
       });
+
+      /*Add recent project name to user details*/
+      userRef.child('recentproject').set({
+        projectkey:newProjectKey
+      });
+
      document.getElementById('project_name').value='';
    }else{
      alert("You must enter a new project name!");
@@ -67,11 +83,11 @@ document.getElementById('recent_project_name').addEventListener('click',function
 
  function show(){
     //retriveing database values
+
    projectref.orderByChild('startdate').on('child_added', function(snapshot){
-    var project = snapshot.val().name;
-    console.log(project);
-    document.getElementById('recent_project_name').innerText=project;
-    renderui(project);
+    var nameofproject = snapshot.val().name;
+    document.getElementById('recent_project_name').innerText=nameofproject;
+    renderui(nameofproject);
     return true;
    });
     return true;
@@ -100,5 +116,25 @@ document.getElementById('recent_project_name').addEventListener('click',function
      a.innerText=project;
      var projectlist=document.getElementById('project-list-name');
      projectlist.appendChild(a);
+
+    $("#project-list-name").on("click",'a', function(event){
+    var yourRecentProjectName=$(this).text();
+    var recentProjectKey;
+  //  window.location.href="../mainui/mainuiindex.html";
+
+    projectref.child(yourRecentProjectName).once('value', function(snapshot){
+      recentProjectKey = snapshot.val().projectkey;
+        /*Add recent project name to user details*/
+      userRef.child('recentproject').set({
+        projectkey:recentProjectKey
+      });
+      /*top recenet project name for easy acces*/
+      document.getElementById('recent_project_name').innerText=yourRecentProjectName;
+
+    });
+
+
+   });
+
      return true;
   }
