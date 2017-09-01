@@ -1,154 +1,207 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Manage</title>
-    <link rel="stylesheet" href="../mainui/mainuistyle.css">
-    <!--font-style-->
-    <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
-    <!--jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--google icons-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--Firebase connection-->
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
-  </head>
-  <body>
-    <div id="client_ui" class="container-fluid sidebar_theme_defalut flex_pane_showing details_showing">
-      <div class="client_container">
-        <!--left side-->
-        <div class="client_channels_list_container">
-          <!---upper side-->
-          <div id="team_menu">
-            <div class="team_name_container top_margin">
-              <button id="button_expand_details"class="ts_icon team_name_caret btn_unstyle material-icons"type="button" name="button">expand_more</button>
-              <span id="team_name" class="overflow_ellipsis">project name</span>
-            </div>
-            <div id="team_menu_user">
-              <div id="presence_container" class="no_wrap ts_tip ts_tip_bottom ts_tip_left">
-                <i id="presence" class="ts_icon ts_icon_presence active" style="opacity=0.98"></i>
-              </div>
-              <span id="team_menu_user_details">
-                <span id="team_menu_user_name" class="overflow_ellipsis current_user_name">username</span>
-              </span>
-            </div>
-          </div>
-          <!--lower side-->
-          <div id="col_channels" class="channels_list_holder no_unread_msgs_badged default_sort">
-            <div id="col_channels_react_root" class="display_flex flex_direction_column flex_one">
-              <nav class="p-channel_sidebar">
-                <div class="p-channel_sidebar_list" style="position:relative">
-                  <div style="overflow:visible; height:0px;width:0;">
-                    <div class="c-scrollbar c-scrollbar--hidden" style="width:220px;height:848px;">
-                      <div class="c-scrollbar__hider">
-                        <div class="c-scrollbar__child" style="width:220px;">
-                          <div class="p-channel_sidebar_static_list">
 
-                            <div style="height:12px;"></div>
-                            <!--sidebar content will go here-->
-                            <!--home-->
-                            <div style="height: 26px;">
-                              <button type="button" class="p-channel_sidebar__link" aria-label="Browse everything">
+<head>
+  <meta charset="utf-8">
+  <title>Manage</title>
+  <link rel="stylesheet" href="../mainui/mainuistyle.css">
+  <!--font-style-->
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--google icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--Firebase connection-->
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+</head>
+
+<body>
+  <div id="client_ui" class="container-fluid sidebar_theme_defalut flex_pane_showing details_showing">
+    <div class="client_container">
+      <!--left side-->
+      <div class="client_channels_list_container">
+        <!---upper side-->
+        <div id="team_menu">
+          <div class="team_name_container top_margin">
+            <button id="button_expand_details" class="ts_icon team_name_caret btn_unstyle material-icons" type="button" name="button">expand_more</button>
+            <span id="team_name" class="overflow_ellipsis">project name</span>
+          </div>
+          <div id="team_menu_user">
+            <div id="presence_container" class="no_wrap ts_tip ts_tip_bottom ts_tip_left">
+              <i id="presence" class="ts_icon ts_icon_presence active" style="opacity=0.98"></i>
+            </div>
+            <span id="team_menu_user_details">
+                <span id="team_menu_user_name" class="overflow_ellipsis current_user_name">username</span>
+            </span>
+          </div>
+        </div>
+        <!--lower side-->
+        <div id="col_channels" class="channels_list_holder no_unread_msgs_badged default_sort">
+          <div id="col_channels_react_root" class="display_flex flex_direction_column flex_one">
+            <nav class="p-channel_sidebar">
+              <div class="p-channel_sidebar_list" style="position:relative">
+                <div style="overflow:visible; height:0px;width:0;">
+                  <div class="c-scrollbar c-scrollbar--hidden" style="width:220px;height:848px;">
+                    <div class="c-scrollbar__hider">
+                      <div class="c-scrollbar__child" style="width:220px;">
+                        <div class="p-channel_sidebar_static_list">
+
+                          <div style="height:12px;"></div>
+                          <!--sidebar content will go here-->
+                          <!--home-->
+                          <div style="height: 26px;">
+                            <button type="button" class="p-channel_sidebar__link" aria-label="Browse everything">
                                 <span class="p-channel_sidebar__name">Home</span><!-- react-empty: 15 -->
                               </button>
-                            </div>
-                            <div style="height: 18px;"></div>
-                            <!--task-->
-                            <div style="height: 26px;">
-                              <div class="p-channel_sidebar__section_heading" role="heading">
-                                <button class="p-channel_sidebar__section_heading_label p-channel_sidebar__section_heading_label--clickable">Tasks</button>
-                                <div class="p-channel_sidebar__section_heading_right">
-                                  <button id="add_task"class="p-channel_sidebar__section_heading_plus material-icons" style="font-size:21px;">add_circle_outline</button>
-                                </div>
+                          </div>
+                          <div style="height: 18px;"></div>
+                          <!--task-->
+                          <div style="height: 26px;">
+                            <div class="p-channel_sidebar__section_heading" role="heading">
+                              <button class="p-channel_sidebar__section_heading_label p-channel_sidebar__section_heading_label--clickable">Tasks</button>
+                              <div class="p-channel_sidebar__section_heading_right">
+                                <button id="add_task" class="p-channel_sidebar__section_heading_plus material-icons" style="font-size:21px;">add_circle_outline</button>
                               </div>
                             </div>
-
-                            <!--task list-->
-                            <div id="task_list" class="task_container">
-
-                            </div>
-
                           </div>
+
+                          <!--task list-->
+                          <div id="task_list" class="task_container">
+                            <!--task list will go here-->
+                          </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
-
-
                 </div>
-                <button type="button" class="p-channel_sidebar_quickswitcher" name="button">
+
+
+              </div>
+              <button type="button" class="p-channel_sidebar_quickswitcher" name="button">
                 <span>Something new</span>
                 </button>
 
-              </nav>
-            </div>
+            </nav>
           </div>
         </div>
+      </div>
 
-        <!--right side-->
-        <div class="client_main_container">
+      <!--right side-->
+      <div class="client_main_container">
+        <header id="client_header">
+          <div class="channel_header">
+            <div class="messages_header">
+              <div class="channel_title">
+                <div id="channel_name_container" class="channel_name_container">
+                  <span id="channel_name" class="channel_name">
+                        <button type="button" name="button" id="im_title" class="btn_unstyle">taskname</button>
+                      </span>
+                </div>
+                <div id="channel_header_info" class="channel_header_info">
+                  <div id="star_container" class="channel_header_info_item">
+                    <button class="star ts_tip ts_icon btn_unstyle material-icons" style="font-size:15px;"type="button" name="button">star_border</button>
+                  </div>
+                  <div class="channel_header_info_item channel_header_member_status active">
+                    <span class="presence">
+                      <i class="ts_icon presence_icon material-icons">favorite_border</i>
+                    </span>
+                    <span id="header_status_message">active</span>
+                  </div>
+                </div>
+                <div class="channel_header_info">
 
-        </div>
+                </div>
+              </div>
+              <div class="channel_title_info">
+                <button id="channel_action_toggle" class="btn_unstyle channel_header_icon ts_tip ts_icon ts_tip_bottom" style="font-size:21px;margin-top: 3px;" type="button" name="button">
+                  <i class="material-icons">settings</i>
+                </button>
+              </div>
 
+            </div>
+            <div class="flex_header">
+              <div id="search_container">
+                <form id="header_search_form" class="search_form no_bottom_margin">
+                  <div class="icon_search_wrapper">
+                    <i class="ts_icon_search icon_search material-icons" style="font-size:22px; color:#9D9E96;">search</i>
+                  </div>
+                  <div class="search_input_wrapper">
+                    <input type="text" id="search_tearms" class="search_input" placeholder="Search">
+                  </div>
+                </form>
+              </div>
+              <button id="star_toggle" class="channel_header_icon btn_unstyle ts_tip ts_tip_bottom"type="button" name="button">
+                <i class="material-icons" style="font-size:26px;">star_border</i>
+              </button>
+              <button id="flex_menu_toggle" class="channel_header_icon btn_unstyle ts_tip" type="button" name="button">
+                <i class="material-icons">more_vert</i>
+              </button>
+            </div>
+          </div>
+        </header>
       </div>
     </div>
+  </div>
+  </div>
 
-    <!--New task dialog-->
-      <div id="fs_modal" role="dialog" class="active">
-    		<a id="fs_modal_close_btn" class="fs_modal_btn">
+  <!--New task dialog-->
+  <div id="fs_modal" role="dialog" class="active">
+    <a id="fs_modal_close_btn" class="fs_modal_btn">
     			<i class="ts_icon ts_icon_times material-icons" style="font-size:36px;">closed</i>
     			<span class="key_label">esc</span>
     		</a>
-      	<div class="contents_container">
-      		<div id="contents">
-            <div id="new_channel_modal_container">
-              <div id="new_channel_modal" class="channel_modal">
-              	<div>
-              		<h1 class="channel_modal_header">
+    <div class="contents_container">
+      <div id="contents">
+        <div id="new_channel_modal_container">
+          <div id="new_channel_modal" class="channel_modal">
+            <div>
+              <h1 class="channel_modal_header">
             			  <span class="public_channel_item">Create a task</span>
               		</h1>
-            			  <p class="input_note_special medium_bottom_margin">Divide your project into diiferent task and assign it to your team members. They’re best way to organized your project.</p>
-              	</div>
-              	<div>
-              		<div class="bottom_margin">
-              			<label for="channel_create_title" class="align_left">Name</label>
-              			<div class="channel_modal_title_input_container no_margin">
-              				<input id="channel_create_title" style="width:612px;" name="title_input" type="text" class="lowercase title_input large_left_padding validation_warning" placeholder="e.g. desgin">
-              			</div>
-              			<span class="modal_input_note margin_auto">
+              <p class="input_note_special medium_bottom_margin">Divide your project into diiferent task and assign it to your team members. They’re best way to organized your project.</p>
+            </div>
+            <div>
+              <div class="bottom_margin">
+                <label for="channel_create_title" class="align_left">Name</label>
+                <div class="channel_modal_title_input_container no_margin">
+                  <input id="channel_create_title" style="width:612px;" name="title_input" type="text" class="lowercase title_input large_left_padding validation_warning" placeholder="e.g. desgin">
+                </div>
+                <span class="modal_input_note margin_auto">
               				Task names must be lowercase, without spaces.
               			</span>
-              		</div>
-              		<div class="medium_bottom_margin">
-              			<label for="channel_purpose_input" class="block align_left">
+              </div>
+              <div class="medium_bottom_margin">
+                <label for="channel_purpose_input" class="block align_left">
               				Purpose
               				<span class="greigh normal">(optional)</span>
               			</label>
-              				<input id="channel_purpose_input" style="width:612px;" name="channel_purpose_input" type="text" maxlength="250" placeholder="">
-              			<span class="modal_input_note margin_auto">What’s this task about?</span>
-              		</div>
-              	</div>
-            	  <div class="new_channel_modal_footer">
-              		<button id="save_channel" class="btn btn_large new_channel_go ladda-button float_right" type="submit" data-style="expand-right" aria-disabled="true">
+                <input id="channel_purpose_input" style="width:612px;" name="channel_purpose_input" type="text" maxlength="250" placeholder="">
+                <span class="modal_input_note margin_auto">What’s this task about?</span>
+              </div>
+            </div>
+            <div class="new_channel_modal_footer">
+              <button id="save_channel" class="btn btn_large new_channel_go ladda-button float_right" type="submit" data-style="expand-right" aria-disabled="true">
                     <span class="ladda-label">Create task</span>
                     <span class="ladda-spinner"></span>
                   </button>
-              		<button id="cancel_task"type="reset" class="btn btn_large btn_outline float_right small_right_margin ladda-button new_channel_cancel_btn">
+              <button id="cancel_task" type="reset" class="btn btn_large btn_outline float_right small_right_margin ladda-button new_channel_cancel_btn">
                     <span class="ladda-label">Cancel</span>
                   </button>
-              	</div>
-
-              </div>
             </div>
+
           </div>
-      	</div>
+        </div>
       </div>
+    </div>
+  </div>
 
 
 
-    <script type="text/javascript" src="mainuiscript.js"></script>
-  </body>
+  <script type="text/javascript" src="mainuiscript.js"></script>
+</body>
+
 </html>

@@ -84,6 +84,7 @@ body{
   padding: 0;
   font-size: inherit;
   font-weight: inherit;
+  outline: 0;
 }
 button{
   margin:0;
@@ -547,45 +548,226 @@ input[type=text]:focus{
   border: 1px solid #E0E1D6;
 }
 
-/*task container*/
-.task_container{
-  color:#fff;
-  display: block;
-  align-items: center;
-  padding: 4px 0.75rem 0 15px;
-  width: 100%;
-  background: none;
-  border: 0;
-  font-size: 16px;
-  overflow-y: visible;
+
+/*right side*/
+.client_main_container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*****************/
+#client_header{
+background: 0 0;
+flex-basis: 53px;
+z-index: 201;
+}
+.channel_header{
+  display: flex;
+  background: #fff;
+  padding: .7rem 0 0 ;
+  height: 100%;
+  font-family: 'Quattrocento Sans';
+}
+.messages_header{
+  display: flex;
+  flex: 1;
+  min-width: 1px;
+  color: #717274;
+}
+.channel_title{
+  flex: 1;
+  min-width: 1px;
+  margin-top: -2px;
+}
+.channel_name_container{
+  display: flex;
+  transition: .15s;
+  user-select: none;
+}
+.channel_title .channel_name{
+  display: flex;
+  min-width: 1px;
+  user-select: none;
+  margin: 0 0 -2px;
+  line-height: 1.3;
+  font-size: 1.125rem;
+  padding: 0 .1rem 0 1.3rem;
+  font-weight: 500;
+  color: #2C2D30;
+  cursor: pointer;
+  align-items: baseline;
+}
+.channel_title .channel_name button{
+  color: inherit;
+}
+.channel_header_info{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  padding-left: 1.3rem;
+  font-size: .8125rem;
+  font-weight: 300;
+  line-height: 1.16;
+}
+.channel_header_info_item{
+  display: flex;
+  white-space: nowrap;
+  margin-right: .4rem;
+}
+.channel_header_info .star{
+padding-top: 1px;
+padding-bottom: 2px;
+transform: none;
+}
+.channel_header_info .ts_icon{
+  line-height: .9;
+  display: inline-block;
+}
+.star:not(.not-clickable){
+  cursor: pointer;
+}
+button.star{
+  outline: 0;
+}
+.star{
+  font-size: .8rem;
+}
+.channel_header_info_item.channel_header_member_status{
+  overflow: hidden;
+}
+.channel_header_member_status .presence{
+  width: 11px;
+  height: auto;
+  position: static;
+  margin: auto;
+}
+.presence{
+  display: inline-block;
+  vertical-align: baseline;
+  background: 0 0;
+  padding-right: 4px;
+  padding-top: 4px;
+}
+.channel_header_member_status .presence .presence_icon{
+  line-height: 1;
+  font-size: 13px;
+  position: static;
+  text-align: center;
+}
+.presence i.presence_icon{
+  display: inline-block;
+  top: -10px;
+  left: -5px;
+}
+.channel_header_info_item.channel_header_member_status#header_status_message{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#header_status_message{
+  padding-top: 2px;
+}
+.channel_title_info{
+  display: flex;
+  color: #9e9ea6;
+  margin:3px 8px 0 0;
+}
+.channel_header_icon{
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+  margin-left: 1px;
+  color: #9D9E96;
+  border-radius: .25rem;
+}
+.flex_header{
+  display: flex;
+  align-items: center;
+  height: 34px;
+  margin:2px 0 0 ;
+  padding: 0 10px 0 0;
+  width: 415px;
+  transition: width .15s ease-out 0s;
+}
+#search_container{
+  flex: 1;
+  position: relative;
+  z-index: 0;
+  margin:0 7px 0 0;
+}
+.search_form{
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  height: 34px;
+  border-radius: .35rem;
+  border: 1px solid #A0A0A2;
+}
+.no_bottom_margin{
+  margin-bottom: 0;
+}
+form{
+  margin: 0 0 24px;
+}
+.icon_search_wrapper{
+  width: 30px;
+}
+#search_container.icon_search{
+  flex: none;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin-right: -25px;
+  margin-left: 8px;
+  text-shadow: none;
+  opacity: 1;
+  width: 17px;
+  height: 17px;
+  position: static;
+  color: #717274;
+}
+#client_ui .icon_search{
+  font-size: .9rem;
+  margin-left: 6px;
+  margin-top: 4px;
+}
+.icon_search{
+display: block;
+margin-left: 0 auto;
+}
+.search_input_wrapper{
+  font-size: 15px;
+  display: flex;
+  align-items: baseline;
+  flex:1;
+}
+#search_container .search_input{
+  flex: 1;
+  font-size: 15px;
+  height: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin:0;
+  border: none;
+  border-radius: 0;
+  display: block;
+}
+.search_form .search_input{
+  vertical-align: middle;
+  width: 100%;
+  background: 100%;
+}
+input[type=text]{
+  padding-top: 0;
+}
+#star_toggle{
+  flex: none;
+  width: 34px;
+}
+#flex_menu_toggle{
+  flex: none;
+  width: 22px;
+}

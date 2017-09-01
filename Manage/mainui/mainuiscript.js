@@ -91,7 +91,7 @@ var config = {
 
    function renderTask(tasknamevalue){
      var a=document.createElement('a');
-     a.style.color="#fff";
+     a.style.color="#D0D0D0";
      a.style.height="26px"
      a.style.fontWeight="500";
      a.style.lineHeight="1.2rem";
@@ -102,7 +102,9 @@ var config = {
      a.innerText=tasknamevalue;
      var tasklist=document.getElementById('task_list');
      tasklist.appendChild(a);
+
      return true;
    }
+
 
 });
