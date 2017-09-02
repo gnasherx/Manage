@@ -94,7 +94,7 @@
       <div class="client_main_container">
         <header id="client_header">
           <div class="channel_header">
-            <div class="messages_header">
+            <!-- <div class="messages_header">
               <div class="channel_title">
                 <div id="channel_name_container" class="channel_name_container">
                   <span id="channel_name" class="channel_name">
@@ -103,7 +103,7 @@
                 </div>
                 <div id="channel_header_info" class="channel_header_info">
                   <div id="star_container" class="channel_header_info_item">
-                    <button class="star ts_tip ts_icon btn_unstyle material-icons" style="font-size:15px;"type="button" name="button">star_border</button>
+                    <button class="star ts_tip ts_icon btn_unstyle material-icons" style="font-size:15px;" type="button" name="button">star_border</button>
                   </div>
                   <div class="channel_header_info_item channel_header_member_status active">
                     <span class="presence">
@@ -115,11 +115,6 @@
                 <div class="channel_header_info">
 
                 </div>
-              </div>
-              <div class="channel_title_info">
-                <button id="channel_action_toggle" class="btn_unstyle channel_header_icon ts_tip ts_icon ts_tip_bottom" style="font-size:21px;margin-top: 3px;" type="button" name="button">
-                  <i class="material-icons">settings</i>
-                </button>
               </div>
 
             </div>
@@ -134,15 +129,42 @@
                   </div>
                 </form>
               </div>
-              <button id="star_toggle" class="channel_header_icon btn_unstyle ts_tip ts_tip_bottom"type="button" name="button">
+              <button id="star_toggle" class="channel_header_icon btn_unstyle ts_tip ts_tip_bottom" type="button" name="button">
                 <i class="material-icons" style="font-size:26px;">star_border</i>
               </button>
               <button id="flex_menu_toggle" class="channel_header_icon btn_unstyle ts_tip" type="button" name="button">
                 <i class="material-icons">more_vert</i>
               </button>
-            </div>
+            </div> -->
           </div>
         </header>
+        <div id="client_body">
+          <div id="col_messages">
+            <div id="messages_container">
+              <div id="msgs_scroller_div" class="message_pane_scroller">
+                <!--all messages will go here.-->
+              </div>
+            </div>
+            <div id="footer">
+              <div id="footer_msgs">
+                <form id="msg_form">
+                  <div id="msg_input" class="ql_container">
+                    <div class="ql-editior ql-blank">
+                      <p>
+                        <br>
+                      </p>
+                    </div>
+                  </div>
+
+                  <button id="primary_file_button" class="btn_unstyle file_upload_btn" type="button" name="button">
+                    <i class="ts_icon material-icons">add</i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
