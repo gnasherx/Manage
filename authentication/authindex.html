@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Signup | Manage</title>
+  <link rel="stylesheet" href="authstyle.css">
+  <!--Google font-->
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+</head>
+
+<body>
+  <header class="top_wrapper">
+    <div class="hero-container">
+      <img src="authimages/hero-background.jpg" class="hero-image img-responsive" alt="Slack Frontiers 2017"></img>
+      <div class="container center_block">
+        <nav class="container_top">
+          <div class="nav_left_logo">
+            <!--left logo-->
+
+          </div>
+
+        </nav>
+        <!--input-->
+        <div class="fs_split_body">
+          <div class="fs_spilt_container">
+            <h1>Create your account</h1>
+
+            <label id="email_label"><span class="normal">Your </span>email address</label>
+            <input type="text" placeholder="you@example.com" id="signup_email" data-qa="email_field" spellcheck="false" aria-labelledby="email_label" data-email-healing="true" class="">
+
+            <div style="height:14px"></div>
+
+            <label id="password_label"><span class="normal">Your </span>password</label>
+            <input type="password" id="signup_password" data-qa="passworld_field" spellcheck="false" aria-labelledby="passwrod_label" class="">
+
+            <div style="height:8px"></div>
+
+            <div class="button_container">
+              <button id="submit_btn" class="btn btn_large ladda-button" data-style="expand-right" data-qa="submit_button">
+      					<span class="ladda-label">Create account</span>
+      				</button>
+            </div>
+
+             <div style="height:12px"></div>
+
+            <div class="nav_right_text">
+              <span class="join_existing_account">Looking to join an existing account?</span>
+              <a href="#" id="signin_link">Signin here</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script type="text/javascript" src="authscript.js"></script>
+</body>
+
+</html>

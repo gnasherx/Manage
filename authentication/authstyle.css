@@ -1,0 +1,243 @@
+body {
+  background: #fff;
+  color: #555459;
+  margin: 0 auto;
+  font-family: 'Quattrocento Sans';
+  line-height: 1.5rem;
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cacaca;
+}
+input[type="text"],textarea,input[type=password] {
+  background-color : transparent;
+}
+
+.full_height {
+  height: 100%;
+}
+
+.no_margin {
+  margin: 0!important;
+}
+
+
+/*header*/
+
+.top_wrapper {
+  background-color: #fdfaf8;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+@media (min-width:1600px) .hero-container {
+  height: 800px;
+}
+
+@media (min-height:700px) and (min-width:768px). {
+  height: 80vw;
+}
+
+@media (min-width: 768px) .hero-container {
+  height: 100vh;
+  max-height: 100%;
+}
+
+.hero-container {
+  position: relative;
+  width: 100vw;
+  height: 65vw;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.hero-container .hero-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+@media (min-width:1200px) .container {
+  width: 1170px;
+}
+
+@media (min-width:980px) .container {
+  width: 970px;
+}
+
+@media(min-width:768px) .container {
+  width: 750px;
+}
+
+.hero-container .container {
+  position: absolute;
+  width: 70%;
+  left: 14%;
+  top: 30%;
+  transform: translateY(-45%);
+  bottom: initial;
+  z-index: 10;
+  text-align: center;
+}
+
+.center_block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*top nav*/
+.container_top{
+  display: flex;
+  width: 100%;
+  position: relative;
+  top: -25px;
+  height: 40px;
+}
+.nav_right_text{
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+}
+.join_existing_account{
+  color: #1A1938;
+  font-size: 16px;
+  display: flex;
+  font-weight: 500;
+  margin: auto 0;
+}
+
+#signin_link{
+  text-decoration: none;
+  color: #1A1938;
+  display: flex;
+  padding: 3px 6px;
+  line-height: 1.5rem;
+  margin: auto 0 auto 0;
+  font-weight: 500;
+
+}
+/*input*/
+
+.fs_split_body {
+  padding: 0 12%;
+  position: relative;
+  align-self: center;
+  max-width: 100%;
+}
+.fs_spilt_container{
+  margin:0 auto;
+  position: relative;
+  width: 50%;
+}
+
+.fs_split_body h1 {
+  font-size: 48px;
+  color: #1A1938;
+  line-height: 48px;
+  font-weight: 200;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  display: block;
+  margin: 0px;
+}
+
+.container label {
+  text-align: left;
+  color: #1A1938;
+  font-weight: 500;
+  margin: 0 0 4px;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.normal{
+  font-weight: 300;
+  color: #1A1938;
+}
+
+input[type=text], input[type=password] {
+  font-size: 1.25rem;
+  line-height: normal;
+  padding: .75rem;
+  width: 100%;
+  color: #1A1938;
+  border: 1px solid #A0A0A2;
+  border-radius: .25rem;
+  outline: 0;
+  max-width: 100%;
+  margin: 0 0 .5rem;
+}
+input[type=text]:focus, input[type=password]:focus{
+  border-color: #6e6e6f;
+  outline: none;
+}
+.button_container{
+  display: flex;
+  width: 40%;
+  height: 50px;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.btn_large{
+  font-size: 20px;
+  padding: 14px 100px 16px;
+}
+.btn{
+  background: #2ab27b;
+  color: #fff;
+  line-height: 1.2rem;
+  font-weight: 500;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,.1);
+  border: none;
+  width: 100%;
+  border-radius: .25rem;
+  box-shadow: none;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+}
+.ladda-label{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
