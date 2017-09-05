@@ -7,7 +7,6 @@ body {
   min-width: 768px;
   line-height: 1rem;
   background-color: #fff;
-  color: #555459;
   padding: 0;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -687,6 +686,9 @@ input[type=text]:focus {
   font-family: 'Quattrocento Sans';
 }
 
+/**/
+/**/
+/**/
 /*.messages_header {
   display: flex;
   flex: 1;
@@ -963,7 +965,7 @@ input[type=text] {
   flex: 1;
 }
 /* TODO: add all chats css if any */
-#footer{
+/*#footer{
   order: 1;
   margin-bottom: 10px;
   flex-shrink: 0;
@@ -1030,4 +1032,78 @@ form{
   text-shadow: none;
   text-align: center;
   border-radius: 6px 0 0 6px;
+}*/
+/**/
+/**/
+/**/
+
+/*messenger chat input*/
+._4rv3{
+  border: 1px solid rgba(0,0,0,.10);
+  z-index: 201;
+  margin: 4px;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  flex-direction: column;
+  display: flex;
+}
+._5irm{
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px 0 12px;
+  position: relative;
+}
+._kmc{
+  flex: 1;
+  height: 30px;
+  padding: 9px 0;
+  vertical-align: middle;
+}
+._3-8x {
+  margin-top: 8px;
+}
+._5rp7{
+  position: relative;
+  height: inherit;
+  text-align: initial;
+}
+._kmc ._1p1t{
+  color: #ccc;
+  -webkit-text-fill-color:#ccc;
+}
+._5rp8 ._1p1t{
+  left: 0;
+  text-align: left;
+}
+._1p1t{
+  position: absolute;
+  z-index: 1;
+}
+._5rpb{
+  background-color: rgba(255, 255, 255, 0);
+  border-left: .1px solid transparent;
+  position: relative;
+  z-index: 1;
+  height: inherit;
+  text-align: initial;
+}
+._5rpu[contenteditable='true']{
+  -webkit-user-modify: read-write-plaintext-only;
+}
+._5rpu{
+  height: inherit;
+  color: black;
+  text-align: initial;
+}
+._5rp8 ._1mf{
+  text-align: left;
+}
+._1mj{
+  direction: ltr;
+}
+._1mf{
+  position: relative;
+  white-space: pre-wrap;
+}
+div{
+  display: block;
 }

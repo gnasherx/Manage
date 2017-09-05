@@ -106,5 +106,19 @@ var config = {
      return true;
    }
 
+  // send message
+  document.getElementById('type_a_message').addEventListener('keydown',function(e){
+    if(e.keyCode==13){
+        // var message=document.getElementById('type_a_message').value;
+        console.log('click');
+
+        var message = $(this).text();
+        console.log(message);
+        window.open('mailto:pawarg124@gmail.com');
+
+
+
+    }
+  });
 
 });
