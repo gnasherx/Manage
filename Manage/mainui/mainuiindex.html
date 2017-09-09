@@ -5,12 +5,14 @@
   <meta charset="utf-8">
   <title>Manage</title>
   <link rel="stylesheet" href="../mainui/mainuistyle.css">
+  <link rel="stylesheet" href="../mainui/mainuisecondstyle.css">
   <!--font-style-->
   <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
   <!--jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--google icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   <!--Firebase connection-->
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
@@ -73,6 +75,16 @@
                             <!--task list will go here-->
                           </div>
 
+
+                          <div style="height:12px;"></div>
+                          <div style="height: 26px;">
+                            <button id="invite_people" type="button" class="p-channel_sidebar__link p-channel_sidebar__link--invites" aria-label="Invite People">
+                              <span class="p-channel_sidebar__name">Invite People</span>
+                              <!-- react-empty: 92 -->
+                            </button>
+
+                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -91,7 +103,7 @@
       </div>
 
       <!--right side-->
-    <div class="client_main_container">
+      <div class="client_main_container">
         <header id="client_header">
           <div class="channel_header">
             <!-- <div class="messages_header">
@@ -143,22 +155,6 @@
             <div id="messages_container">
               <div id="msgs_scroller_div" class="message_pane_scroller">
                 <!--all messages will go here.-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
 
@@ -172,9 +168,8 @@
                       <div tabindex="-1">
                         <div class="_5rp7 _5rp8">
                           <div class="_5rpb">
-                            <div id="type_a_message" autofocus="autofocus" aria-autocomplete="list" aria-controls="js_7" aria-describedby="placeholder-foura" aria-expanded="false"
-                            aria-label="Type a message..." class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true" tabindex="0"
-                             style="outline: none; white-space: pre-wrap; word-wrap: break-word;">
+                            <div id="type_a_message" autofocus="autofocus" aria-autocomplete="list" aria-controls="js_7" aria-describedby="placeholder-foura" aria-expanded="false" aria-label="Type a message..." class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true"
+                              tabindex="0" style="outline: none; white-space: pre-wrap; word-wrap: break-word;">
                               <div data-contents="true">
                                 <div class="" data-block="true" data-editor="foura" data-offset-key="cs6t-0-0">
                                   <div data-offset-key="cs6t-0-0" class="_1mf _1mj">
@@ -188,17 +183,18 @@
                           </div>
                         </div>
                       </div>
-                     </div>
-                   </div>
+                    </div>
+                  </div>
                 </div>
-          </div>
-        </div><!--chat input ends here-->
+              </div>
+            </div>
+            <!--chat input ends here-->
 
+          </div>
+        </div>
       </div>
     </div>
-    </div>
   </div>
-</div>
 
   <!--New task dialog-->
   <div id="fs_modal" role="dialog" class="active">
@@ -250,6 +246,97 @@
       </div>
     </div>
   </div>
+
+  <!--invite people-->
+    <div id="fs_modal_invite" role="dialog" class="active">
+      <a id="fs_modal_close_btn_invite" class="fs_modal_btn">
+  			<i class="ts_icon ts_icon_times material-icons" style="font-size:36px;">closed</i>
+  			<span class="key_label">esc</span>
+  		</a>
+      <div class="contents_container">
+        <div class="contents">
+          <div id="admin_invites_container"  class="admin_invites_container">
+
+            <div id="admin_invites_alert" class="align_center alert">
+              <i class="ts_icon_add_user very_small_right_margin blue_fill material-icons" style="font-size:22px;">person_add</i>
+          		<p class="inline">
+          				Invite your team <span class="bold">members</span>.
+          		</p>
+          	</div> <!--admin_invites_alert-->
+
+            <h1 id="admin_invites_header" class="light align_center">
+          		<i class="ts_icon ts_icon_paper_plane blue_fill float_none small_right_margin material-icons">send</i>
+          		Invite <span class="admin_invites_header_type normal">Members</span>
+          	</h1>
+
+            <div id="admin_invites_workflow">
+              <div id="individual_invites">
+                <div id="individual_invites">
+
+                  <div id="invite_rows" style="height:80px;">
+                    <div id="invite_0" class="admin_invite_row clearfix">
+                      <div class="col span_1_of_2">
+                        <label class="email full_width">
+                          Email Address<br>
+                          <div class="full_width">
+                            <input id="invite_email" type="text" spellcheck="false" autocorrect="off" class="email_field small" name="email_address" placeholder="name@example.com" data-email-healing="true">
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col span_1_of_2">
+                        <label class="email full_width">
+                          Full Name<br>
+                          <div class="full_width">
+                            <input id="invite_fullname" type="text" spellcheck="false" autocorrect="off" class="email_field small" name="email_address"  data-email-healing="true">
+                          </div>
+                        </label>
+                      </div>
+                    </div><!--invite_0-->
+                  </div><!--invite_row-->
+
+
+
+          			<div id="admin_invites_channel_picker_container" class="no_bottom_margin">
+                  <div>
+                    <label>Default Project</label>
+                    <div class="greigh no_bottom_margin">
+                      <p id="default_channels_note" class="">
+                        New <strong>members</strong> will automatically join current <strong>project</strong>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="invite_modal_options_container">
+                  <div class="admin_invites_guest_expiration_date_container">
+                    <div class="invite_modal_options large_bottom_margin">
+                      <div class="invite_modal_options_right">
+                        <button type="submit" id="admin_invites_submit_btn" class="btn btn_large ladda-button ladda" data-action="api_send_invites" data-style="expand-right">
+                          <span class="ladda-label" data-clog-click="true" data-clog-event="INVITEMODAL_ACTION" data-clog-params="action=invite,trigger=click_cta_submit_btn">Send Invitations</span>
+                          <span class="ladda-spinner"></span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!--individual_invites-->
+              </div><!--admin_invites_workflow-->
+
+            </div>  <!--admin_invites_container-->
+          </div> <!--contents-->
+        </div>  <!--contents_container-->
+      </div> <!--fs_modal-->
+
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 

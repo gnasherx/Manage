@@ -1,4 +1,4 @@
-html {
+  html {
   height: 100%;
 }
 
@@ -348,7 +348,7 @@ button {
 #fs_modal_bg.active {
   top: 0;
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(.2, .8, .5, 1), top 0s linear 0s, left 250ms ease-in-out;
+transition: opacity 250ms cubic-bezier(.2,.8,.5,1),top 0s linear 0s,left 250ms ease-in-out;
 }
 
 #fs_modal_bg {
@@ -360,13 +360,14 @@ button {
   z-index: 1040;
 }
 
-#fs_modal.active {
+#fs_modal.active,#fs_modal_invite.active {
   top: 0;
   opacity: 1;
   transform: translateY(0);
+  -webkit-transition: opacity 150ms cubic-bezier(.2,.8,.5,1) .1s,-webkit-transform 150ms cubic-bezier(.2,.8,.5,1) .1s,left 250ms ease-in-out;
 }
 
-#fs_modal {
+#fs_modal, #fs_modal_invite {
   position: fixed;
   right: 0;
   border: 0;
@@ -383,17 +384,20 @@ button {
 
 /*closed btn*/
 
-#fs_modal .fs_modal_btn#fs_modal_close_btn {
+#fs_modal .fs_modal_btn#fs_modal_close_btn,
+#fs_modal_invite .fs_modal_btn#fs_modal_close_btn_invite{
   right: 3rem;
 }
 
-#fs_modal_close_btn:hover {
+#fs_modal_close_btn:hover,
+#fs_modal_close_btn_invite:hover {
   background-color: #E7E7E7;
   border-radius: 50%;
   cursor: pointer;
 }
 
-#fs_modal .fs_modal_btn {
+#fs_modal .fs_modal_btn ,
+#fs_modal_invite .fs_modal_btn{
   position: absolute;
   top: 3rem;
   width: 4rem;
@@ -411,7 +415,8 @@ a {
   text-decoration: none;
 }
 
-#fs_modal .fs_modal_btn .ts_icon {
+#fs_modal .fs_modal_btn .ts_icon,
+#fs_modal_invite .fs_modal_btn .ts_icon {
   position: absolute;
   top: .5rem;
   left: 0;
@@ -420,7 +425,8 @@ a {
   display: block;
 }
 
-#fs_modal .fs_modal_btn .key_label {
+#fs_modal .fs_modal_btn .key_label,
+#fs_modal_invite .fs_modal_btn .key_label {
   position: absolute;
   top: 2.25rem;
   left: 0;
@@ -431,7 +437,8 @@ a {
 
 /*contents*/
 
-#fs_modal .contents_container {
+#fs_modal .contents_container ,
+#fs_modal_invite .contents_container{
   position: absolute;
   top: 0;
   left: 0;
@@ -445,7 +452,9 @@ a {
   padding: 15vh 2rem 2rem;
 }
 
-#fs_modal .contents_container #contents {
+#fs_modal .contents_container #contents,
+#fs_modal_invite .contents_container #contents
+ {
   width: 640px;
   max-width: 100%;
   padding-bottom: 2rem;
@@ -530,9 +539,8 @@ input[type=text] {
   border-radius: .25rem;
   outline: 0;
   color: #555459;
-  width: 100%;
+  /*width: 100%;*/
   max-width: 100%;
-  margin: 0 0 .5rem;
   box-shadow: none;
   height: auto;
   display: inline-block;
@@ -662,6 +670,32 @@ input[type=text]:focus {
 }
 
 
+/*invite people*/
+
+.p-channel_sidebar__link {
+  color: rgb(184, 176, 183);
+  display: flex;
+  align-items: center;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 0.75px 0 15px;
+  width: 100%;
+  background: none;
+  border: 0;
+  overflow: visible;
+}
+
+.p-channel_sidebar__name {
+  color: #fff;
+  font-weight: 500;
+  opacity: 1;
+  margin-right: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
 /*right side*/
 
 .client_main_container {
@@ -686,9 +720,16 @@ input[type=text]:focus {
   font-family: 'Quattrocento Sans';
 }
 
+
 /**/
+
+
 /**/
+
+
 /**/
+
+
 /*.messages_header {
   display: flex;
   flex: 1;
@@ -931,13 +972,16 @@ input[type=text] {
 
 }*/
 
+
 /*right bottom chats*/
-#client_body{
+
+#client_body {
   overflow: hidden;
   display: flex;
   flex: 1;
 }
-#col_messages{
+
+#col_messages {
   margin-left: 0;
   position: relative;
   display: flex;
@@ -945,26 +989,33 @@ input[type=text] {
   flex-direction: column;
   min-width: 1px;
 }
-#messages_container{
+
+#messages_container {
   overflow-y: hidden;
   position: relative;
   flex: 1;
   display: flex;
 }
-#msgs_scroller_div{
+
+#msgs_scroller_div {
   overflow-x: hidden;
   overflow-y: scroll;
   border-right: .25rem solid transparent;
-  outline :0;
+  outline: 0;
   display: flex;
   flex-direction: column;
   min-width: 1px;
 }
-.message_pane_scroller{
+
+.message_pane_scroller {
   height: auto!important;
   flex: 1;
 }
+
+
 /* TODO: add all chats css if any */
+
+
 /*#footer{
   order: 1;
   margin-bottom: 10px;
@@ -1033,52 +1084,68 @@ form{
   text-align: center;
   border-radius: 6px 0 0 6px;
 }*/
-/**/
-/**/
+
+
 /**/
 
+
+/**/
+
+
+/**/
+
+
 /*messenger chat input*/
-._4rv3{
-  border: 1px solid rgba(0,0,0,.10);
+
+._4rv3 {
+  border: 1px solid rgba(0, 0, 0, .10);
   z-index: 201;
   margin: 4px;
-	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
   flex-direction: column;
   display: flex;
 }
-._5irm{
+
+._5irm {
   display: flex;
   flex-direction: column;
   margin: 0 8px 0 12px;
   position: relative;
 }
-._kmc{
+
+._kmc {
   flex: 1;
   height: 30px;
   padding: 9px 0;
   vertical-align: middle;
 }
+
 ._3-8x {
   margin-top: 8px;
 }
-._5rp7{
+
+._5rp7 {
   position: relative;
   height: inherit;
   text-align: initial;
 }
-._kmc ._1p1t{
+
+._kmc ._1p1t {
   color: #ccc;
-  -webkit-text-fill-color:#ccc;
+  -webkit-text-fill-color: #ccc;
 }
-._5rp8 ._1p1t{
+
+._5rp8 ._1p1t {
   left: 0;
   text-align: left;
 }
-._1p1t{
+
+._1p1t {
   position: absolute;
   z-index: 1;
 }
-._5rpb{
+
+._5rpb {
   background-color: rgba(255, 255, 255, 0);
   border-left: .1px solid transparent;
   position: relative;
@@ -1086,24 +1153,192 @@ form{
   height: inherit;
   text-align: initial;
 }
-._5rpu[contenteditable='true']{
+
+._5rpu[contenteditable='true'] {
   -webkit-user-modify: read-write-plaintext-only;
 }
-._5rpu{
+
+._5rpu {
   height: inherit;
   color: black;
   text-align: initial;
 }
-._5rp8 ._1mf{
+
+._5rp8 ._1mf {
   text-align: left;
 }
-._1mj{
+
+._1mj {
   direction: ltr;
 }
-._1mf{
+
+._1mf {
   position: relative;
   white-space: pre-wrap;
 }
-div{
+
+div {
   display: block;
+}
+
+/*invite member*/
+#fs_modal_invite .contents_container .contents{
+  width: 640px;
+  max-width: 100%;
+  padding-bottom: 2rem;
+}
+#admin_invites_alert{
+  font-size: .9rem;
+  margin-bottom: 2.5rem;
+  padding:.75rem .5rem;
+  border: 1px solid #2D9EE0;
+  border-radius: 4px;
+  line-height: 1.375rem;
+  background: rgba(45,158,224,.06);
+}
+.align_center{
+  text-align: center!important;
+}
+.alert{
+  color: #555459;
+  margin:0 auto 1rem;
+  text-shadow: 0 1px 0 rgba(255,255, 255, 0.5);
+}
+
+p{
+  margin:0 0 0;
+}
+#admin_invites_alert .ts_icon{
+  margin-left: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+}
+.blue_fill{
+  color: #2D9EE0;
+}
+.very_small_right_margin{
+  margin-right: .25rem!important;
+}
+.bold{
+  font-weight: 600!important;
+}
+a, a:link{
+  color: #007AB8;
+}
+.no_underline{
+  text-decoration: none;
+}
+#fs_modal_invite h1{
+  color: #2C2D30;
+}
+#admin_invites_header{
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.light{
+  font-weight: 300!important;
+}
+.small_right_margin{
+  margin-right: .5rem!important;
+}
+.float_none{
+  float: none;
+}
+.normal{
+  font-weight: 400;
+}
+#admin_invites_workflow{
+  font-size: 1rem;
+  margin-top: 48px;
+}
+.admin_invite_row{
+  position: relative;
+  padding: .25rem 2.75rem .25rem .5rem;
+  margin: 0 -2.75rem 0 -0.5rem;
+  border-radius: .25rem;
+  transition: background .1s ease-out 0s;
+}
+.admin_invite_row .col{
+  margin-bottom: 0;
+}
+.span_1_of_2{
+  width: 49.2%;
+}
+.col{
+  display: block;
+  float: left;
+  margin: 0 0 2%;
+}
+@media (min-width: 1200px)[class=span]{
+  min-height: 1px;
+}
+.admin_invite_row label{
+  margin:0;
+}
+.full_width{
+  width: 100%!important;
+  max-width: 100%!important;
+}
+label{
+  color: #555459;
+  font-weight: 600;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.admin_invite_row input{
+  margin: .2rem 0 0;
+}
+input.small{
+  font-size: 1rem;
+  padding: .45rem .75rem .55rem;
+}
+.col+.col{
+  margin-left: 1.6%;
+}
+.small_right_margin{
+  margin-right: .5rem!important;
+}
+.no_bottom_margin{
+  margin-bottom: 0!important;
+}
+.float_right{
+  float: right;
+}
+#admin_invites_channel_picker_container{
+  border-bottom: none;
+  margin: 1rem auto 1.5rem;
+  padding-bottom: 2rem;
+}
+.no_bottom_margin{
+  margin-bottom: 0!important;
+}
+.greigh{
+  color: #717274;
+}
+strong{
+  font-weight: 600;
+}
+.invite_modal_options{
+
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.large_bottom_margin{
+  margin-bottom: 2rem;
+}
+.invite_modal_options .invite_modal_options_right{
+  flex-shrink: 1;
+}
+#admin_invites_submit_btn{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  float: right;
+}
+#invite_email, #invite_fullname{
+  width:288.875px;
 }
